@@ -3,7 +3,8 @@
 {
     imports = [
         ./core.nix
-        ./modules/dotnet.nix
+        ./modules/development/dotnet.nix
+        ./modules/development/python.nix
     ];
 
     environment.systemPackages = with pkgs; [
