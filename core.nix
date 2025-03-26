@@ -2,17 +2,16 @@
 
 {
     imports = [
-        ./modules/gnome.nix # GNOME Configuration
-        ./modules/zsh.nix # ZSH Configuration
+        ./modules/git.nix # Git
+        ./modules/gnome.nix # GNOME
+        ./modules/zsh.nix # ZSH
+        ./modules/vscode.nix # VS Code / VSCodium
     ];
 
     # Include core packages
     environment.systemPackages = with pkgs; [
-        git
-
         firefox
 
-        vscode
         onlyoffice-desktopeditors
 
         keepassxc
