@@ -1,33 +1,37 @@
 { config, pkgs, ... }:
 
 {
-  # Enable Zsh and set it as the default shell
-  programs.zsh.enable = true;
-  users.defaultUserShell = pkgs.zsh;
+    # Enable Zsh
+    programs.zsh.enable = true;
+    
+    # Set it as the default shell
+    users.defaultUserShell = pkgs.zsh;
 
-  # Install Zsh plugins and Powerlevel10k
-  environment.systemPackages = with pkgs; [
-    zsh
-    zsh-powerlevel10k
-    zsh-autosuggestions
-    zsh-syntax-highlighting
-  ];
+    environment.systemPackages = with pkgs; [
+        zsh
+        zsh-completions
 
-  # Configure Zsh to load the plugins
-  programs.zsh.promptInit = ''
-    [[ ! -f ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme ]] || 
-      source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme
+        # Zsh plugins
+        zsh-powerlevel10k
+        zsh-autosuggestions
+        zsh-syntax-highlighting
+    ];
 
-    [[ -f /etc/zsh/p10k.zsh ]] && source /etc/zsh/p10k.zsh
+    # Configure Zsh to load the plugins
+    programs.zsh.promptInit = ''
+        [[ ! -f ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme ]] || 
+        source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme
 
-    [[ -f ${pkgs.zsh-autosuggestions}/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]] && 
-      source ${pkgs.zsh-autosuggestions}/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+        [[ -f /etc/zsh/p10k.zsh ]] && source /etc/zsh/p10k.zsh
 
-    [[ -f ${pkgs.zsh-syntax-highlighting}/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]] && 
-      source ${pkgs.zsh-syntax-highlighting}/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+        [[ -f ${pkgs.zsh-autosuggestions}/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]] && 
+        source ${pkgs.zsh-autosuggestions}/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-    ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=8'
+        [[ -f ${pkgs.zsh-syntax-highlighting}/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]] && 
+        source ${pkgs.zsh-syntax-highlighting}/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-    ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern)
-  '';
+        ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=8'
+
+        ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern)
+    '';
 }

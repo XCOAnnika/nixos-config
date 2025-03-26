@@ -3,11 +3,11 @@
 {
     imports = [
         ./core.nix
+        ./modules/dotnet.nix
     ];
 
     environment.systemPackages = with pkgs; [
-        jetbrains-toolbox
-
         vesktop # Discord
+        signal-desktop # Signal messenger
     ];
 }
