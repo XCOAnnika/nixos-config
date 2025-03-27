@@ -2,7 +2,14 @@
 
 {
     # Enable Zsh
-    programs.zsh.enable = true;
+    programs.zsh = {
+        enable = true;
+        shellInit = ''
+            # Set zsh as default for nix-shell
+            __zsh_nix_shell_path=$(ls /nix/store | grep zsh-nix-shell | grep -v '\.drv$' | head -n 1)
+            source "/nix/store/$__zsh_nix_shell_path/share/zsh-nix-shell/nix-shell.plugin.zsh"
+        '';
+    }; 
     
     # Set it as the default shell
     users.defaultUserShell = pkgs.zsh;
@@ -10,6 +17,10 @@
     environment.systemPackages = with pkgs; [
         zsh
         zsh-completions
+        
+        zsh-nix-shell
+
+        fastfetch
 
         # Zsh plugins
         zsh-powerlevel10k
