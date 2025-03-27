@@ -16,12 +16,14 @@
                 defaultBranch = "main";
             };
             credential = {
-                helper = "libsecret";
+                credentialStore = "cache";
+                helper = "manager";
             };
         };
     };
 
     environment.systemPackages = with pkgs; [
         git
+	git-credential-manager
     ];
 }

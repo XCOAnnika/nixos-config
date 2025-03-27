@@ -5,7 +5,7 @@
         ./modules/office.nix # OnlyOffice, Image Editors, Fonts
         ./modules/git.nix # Git
         ./modules/gnome.nix # GNOME
-        ./modules/zsh.nix # ZSH
+        ./modules/cli/zsh.nix # ZSH
         ./modules/vscode.nix # VS Code / VSCodium
     ];
 
