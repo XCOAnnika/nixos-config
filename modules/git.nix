@@ -5,15 +5,18 @@
         enable = true;
 
         config = {
-            user = {
-                name = "AceOfKestrels";
-                email = "aceofkestrels@gmail.com";
+            core = {
+                editor = "nano";
+	    };
+	    user = {
+                name = "Annika";
+                email = "mail@annika-keggenhoff.de";
             };
             init = {
                 defaultBranch = "main";
             };
             credential = {
-                helper = "store";
+                helper = "libsecret";
             };
         };
     };
