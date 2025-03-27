@@ -5,6 +5,6 @@
         jetbrains.rider
 
         dotnetCorePackages.dotnet_8.sdk # .NET 8
-        dotnetCorePackages.dotnet_8.aspnetcore
+        #dotnetCorePackages.dotnet_8.aspnetcore
     ];
 }

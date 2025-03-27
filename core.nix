@@ -2,6 +2,7 @@
 
 {
     imports = [
+        ./modules/office.nix # OnlyOffice, Image Editors, Fonts
         ./modules/git.nix # Git
         ./modules/gnome.nix # GNOME
         ./modules/zsh.nix # ZSH
@@ -11,8 +12,6 @@
     # Include core packages
     environment.systemPackages = with pkgs; [
         firefox
-
-        onlyoffice-desktopeditors
 
         keepassxc
         nextcloud-client
