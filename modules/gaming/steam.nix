@@ -1,7 +1,5 @@
 { config, pkgs, ... }:
 
-# This Setsup hyfetch with fastfetch as a base
-
 {
     programs.steam = {
       enable = true;

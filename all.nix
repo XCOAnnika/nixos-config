@@ -8,6 +8,8 @@
         ./modules/development/docker.nix
 	    ./modules/cli/fetch.nix
 	    ./modules/gaming/steam.nix
+        ./modules/gaming/lutris.nix
+        ./modules/gaming/minecraft.nix
     ];
     
     services.qemuGuest.enable = true;
