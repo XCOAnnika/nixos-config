@@ -34,6 +34,7 @@
 	fi
 	} >> $LOG_FILE
 	
+	cd ~
 	source ~/shell-sources/source-all
     '';
 }
