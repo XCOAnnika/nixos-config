@@ -8,6 +8,8 @@
         ./modules/development/docker.nix
 	./modules/cli/fetch.nix
     ];
+    
+    services.qemuGuest.enable = true;
 
     environment.systemPackages = with pkgs; [
         nix-search-cli # Search Nix packages via CLI
