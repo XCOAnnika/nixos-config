@@ -24,6 +24,6 @@
 
     environment.systemPackages = with pkgs; [
         git
-	git-credential-manager
+	    git-credential-manager
     ];
 }
