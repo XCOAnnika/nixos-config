@@ -6,7 +6,8 @@
         ./modules/development/dotnet.nix
         ./modules/development/python.nix
         ./modules/development/docker.nix
-	./modules/cli/fetch.nix
+	    ./modules/cli/fetch.nix
+	    ./modules/gaming/steam.nix
     ];
     
     services.qemuGuest.enable = true;
